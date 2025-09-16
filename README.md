@@ -1,81 +1,77 @@
 📰 Fake News Detector
 
-A machine learning–powered fake news detection system that classifies news articles as REAL or FAKE using natural language processing (NLP) and Support Vector Machines (SVMs).
+A machine learning–powered system that classifies news articles as REAL or FAKE using natural language processing (NLP) and Support Vector Machines (SVMs).
 
-This project demonstrates how to combine TF-IDF text vectorization with a Linear Support Vector Classifier to build a baseline model for detecting misinformation.
+This project highlights how simple models, when paired with effective preprocessing, can achieve strong performance in detecting misinformation.
 
 🚀 Features
 
-Automated Fake News Classification: Predict whether an article is REAL or FAKE.
+Automated Fake News Classification → instantly determine if an article is REAL or FAKE.
 
-TF-IDF Vectorization: Converts text into meaningful numerical features, filtering out common words.
+High Accuracy → achieves ~90% accuracy on test data.
 
-LinearSVC Model: Efficient and high-performing linear classifier for text data.
+TF-IDF Vectorization → converts text into meaningful features by weighing important words.
 
-Custom Predictions: Input your own .txt news articles for instant classification.
+LinearSVC Model → efficient, scalable classifier for large text datasets.
 
-Extensible Pipeline: Easy to improve by swapping vectorizers or models (e.g., Naive Bayes, Logistic Regression, or even Deep Learning).
+Custom Predictions → works on any .txt news article you provide.
 
-📂 Dataset
+📊 Model Performance
 
-The model is trained on a labeled dataset (fake_or_real_news.csv) containing thousands of news articles tagged as REAL or FAKE.
+Accuracy on test set: ~90%
 
-⚙️ Installation
+Handles thousands of articles efficiently.
 
-Clone the repo and install dependencies:
+Correctly identifies fake clickbait-style headlines while maintaining strong performance on genuine news.
 
-git clone https://github.com/yourusername/fake-news-detector.git
-cd fake-news-detector
-pip install -r requirements.txt
+Example:
 
-🧑‍💻 Usage
-Train the model & evaluate accuracy
-python3 News.py
+“Breaking: Aliens Land in New York” → FAKE
 
+“Central Bank Announces Interest Rate Cut” → REAL
 
-Expected output:
+🧑‍💻 How It Works
 
-Accuracy: 0.92
+Data Preprocessing
 
-Test on a new article
+Loads labeled dataset (fake_or_real_news.csv).
 
-Save your article in a text file (new_article.txt) and run:
+Converts labels → numeric (REAL = 0, FAKE = 1).
 
-with open("new_article.txt", "r", encoding="utf-8") as f:
-    new_text = f.read()
+Feature Engineering
 
-new_text_vectorized = vectorizer.transform([new_text])
-prediction = clf.predict(new_text_vectorized)[0]
+Text transformed into TF-IDF features.
 
-print("Prediction:", "REAL" if prediction == 0 else "FAKE")
+Common words and stopwords filtered out.
 
-📊 Example Results
+Model Training
 
-Accuracy: ~90% on held-out test data.
+Uses Linear Support Vector Classifier (LinearSVC).
 
-Correctly flags fake headlines like “Breaking: Aliens Land in New York”.
+Trained on 80% of the dataset, tested on 20%.
 
-Recognizes genuine reporting from major outlets.
+Evaluation
 
-🔮 Future Improvements
+Accuracy score printed after training.
 
-Add deep learning models (e.g., LSTMs, Transformers).
+Predictions can be run on any new article.
 
-Use larger, more diverse datasets.
+🔮 Future Directions
 
-Build a web app interface for real-time predictions.
+Explore deep learning models (e.g., Transformers, LSTMs).
 
-Deploy via Flask / FastAPI or as a browser extension.
+Expand dataset for broader generalization.
+
+Build a web dashboard for real-time detection.
+
+Deploy as a browser extension to flag articles directly online.
 
 🙌 Acknowledgments
 
-scikit-learn
- for ML algorithms.
+scikit-learn → machine learning algorithms.
 
-Pandas
- for data handling.
+Pandas → data handling.
 
-NumPy
- for numerical computations.
+NumPy → numerical computations.
 
-✨ This project is an educational demo that shows the potential of machine learning in fighting misinformation.
+✨ This project demonstrates that even a lightweight ML pipeline can achieve strong accuracy in detecting fake news.
