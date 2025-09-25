@@ -2,16 +2,17 @@
 
 A machine learning–powered system that classifies news articles as **REAL** or **FAKE** using **natural language processing (NLP)** and **Support Vector Machines (SVMs)**.  
 
-This project highlights how simple models, when paired with effective preprocessing, can achieve strong performance in detecting misinformation.  
+This project includes both the **model training pipeline** and a **Flask-powered web application** with an HTML interface so users can test the detector in their browser.  
 
 ---
 
 ## 🚀 Features  
 - **Automated Fake News Classification** → instantly determine if an article is REAL or FAKE.  
+- **Flask Web App** → clean web interface for easy predictions.  
 - **High Accuracy** → achieves **~90% accuracy** on test data.  
 - **TF-IDF Vectorization** → converts text into meaningful features by weighing important words.  
 - **LinearSVC Model** → efficient, scalable classifier for large text datasets.  
-- **Custom Predictions** → works on any `.txt` news article you provide.  
+- **Custom Predictions** → works on any text input (via website or script).  
 
 ---
 
@@ -43,12 +44,15 @@ This project highlights how simple models, when paired with effective preprocess
    - Accuracy score printed after training.  
    - Predictions can be run on any new article.  
 
+5. **Flask**
+   - run python app.py
+   - Go to: http://127.0.0.1:5000/
+
 ---
 
 ## 🔮 Future Directions  
 - Explore **deep learning models** (e.g., Transformers, LSTMs).  
 - Expand dataset for broader generalization.  
-- Build a **web dashboard** for real-time detection.  
 - Deploy as a **browser extension** to flag articles directly online.  
 
 ---
